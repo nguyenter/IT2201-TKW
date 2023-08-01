@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Share Information Technology Knowledge</title>
+     <link rel="stylesheet" href="styles.css">
+     <link rel="shortcut icon" href="Icon.png">
+     <script src="script.js"></script>
+</head>
+<body>
+     <header class="flex head">
+        <div>
+               <img src="Untitled-1.png" class="img" alt="Information Technology">
+        </div>
+        <div>
+            <h1>Information Technology Knowledge</h1>
+        </div>
+        <div class="flex log">
+            <button onclick="document.getElementById('id01').style.display='block'" class="button" style="width:auto;">Login</button>
+            <div id="id01" class="modal">         
+            <form class="modal-content animate" action="/action_page.php" method="post">
+                <div class="imgcontainer">
+                    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                </div>
+
+                <div class="container">
+                    <label for="uname"><b>Username</b></label>
+                    <input type="text" placeholder="Enter Username" name="uname" required>
+
+                    <label for="psw"><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" name="psw" required>
+                        
+                    <button type="submit">Login</button>
+                    <label>
+                        <input type="checkbox" checked="checked" name="remember"> Remember me
+                    </label>
+                </div>
+
+                <div class="container">
+                    <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                    <span class="psw">Forgot <a href="#">password?</a></span>
+                </div>
+            </form>
+            </div>
+
+            <button onclick="document.getElementById('id02').style.display='block'" class="button" style="width:auto;">Sign in</button>
+
+
+
+
+
+        </div>
+     </header>
+     <div class="flex cos">
+          <nav>
+               <ul class="menu flex block" id="languages">
+                    <li><a href="#">C++</a></li>
+               </ul>
+          </nav>
+     </div>
+     <main class="flex">
+        <section class="left">
+            <ul class="si">
+                <li>
+                    <div class="flex sidebar">
+                        <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+                        <lord-icon
+                            src="https://cdn.lordicon.com/gmzxduhd.json"
+                            trigger="morph"
+                            colors="primary:#121331,secondary:#000000"
+                            state="morph-roll-to-back"
+                            style="width:50px;height:50px">
+                        </lord-icon>
+                        <a href="#">Home</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="flex sidebar">
+                        <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+                        <lord-icon
+                            src="https://cdn.lordicon.com/mecwbjnp.json"
+                            trigger="morph"
+                            colors="primary:#121331,secondary:#000000       "
+                            style="width:50px;height:50px">
+                        </lord-icon>
+                        <a href="#">New Posts</a> 
+                    </div>
+                </li>
+                <li>
+                    <div class="flex sidebar">
+                        <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+                        <lord-icon
+                            src="https://cdn.lordicon.com/rzrkjbrm.json"
+                            trigger="morph"
+                            colors="primary:#121331,secondary:#000000"
+                            style="width:50px;height:50px">
+                        </lord-icon>
+                        <a href="#">Videos</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="flex sidebar">
+                        <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+                        <lord-icon
+                            src="https://cdn.lordicon.com/zpxybbhl.json"
+                            trigger="morph"
+                            colors="primary:#121331,secondary:#000000"
+                            style="width:50px;height:50px">
+                        </lord-icon>  
+                        <a href="#">Contact</a>
+                    </div>
+                </li>
+           </ul>
+        </section>
+        <section class="center">
+            <div class="con">
+                <h2>Posts</h2>
+                <div class="art">
+                    <h3>Title 1</h3>
+                    <p>Short description of the content of the article 1.</p>
+                    <a href="#">View more</a>
+                </div>
+                <div class="art">
+                    <h3>Title 2</h3>
+                    <p>Short description of the content of the article 2.</p>
+                    <a href="#">View more</a>
+                </div>
+                <div class="art">
+                    <h3>Title 3</h3>
+                    <p>Short description of the content of the article 2.</p>
+                    <a href="#">View more</a>
+                </div>
+                <div class="art">
+                    <h3>Title 4</h3>
+                    <p>Short description of the content of the article 2.</p>
+                    <a href="#">View more</a>
+                </div>
+            </div>
+        </section>
+        <section class="right">
+            <div class="ads" id="Ads">
+                <div>ADS</div>
+           </div>       
+        </section>
+     </main>
+     <footer>
+        <div class="container">
+            <h4><p>&copy; Information Technology Knowledge</p</h4>
+        </div>
+      </footer>
+</body>
+</html>
