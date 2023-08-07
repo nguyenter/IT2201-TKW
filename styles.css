@@ -4,20 +4,23 @@
 
 .flex{
      display: flex;
-     align-items: center;
-     justify-items: center;
 }
 body {
      background: linear-gradient(black, silver);
      font-family:cursive;
 }
+.text  {
+     margin:2px 0;
+     font-size: 15px;
+     font-weight: normal;
+}
+.text-min{
+     font-weight: normal;
+     font-size: 10px;
+}
 /*HEADER*/
      header{
           color: var(--color);
-     }
-
-     .head{
-          justify-content:left;
      }
 
      .img{
@@ -34,8 +37,53 @@ body {
           position: absolute;
           right: 0;
      }
-
-
+     .head > div:last-child{
+         padding-top:1.5rem ;
+     }
+/* Thanh tìm kiếm */
+     .search-box {
+          position: absolute;
+          /* display: flex; */
+          align-items: center;
+          right: 11rem;
+          width: 500px;
+          font-family: cursive;
+      }
+      
+     .search-input {
+          padding: 5px 10px;
+          border: 1px solid #ccc;
+          border-radius: 30px;
+          outline: none;
+          font-family: cursive;
+      }
+      
+     .suggestion-list {
+          position: absolute;
+          top: calc(100% + 5px);
+          left: 0;
+          width: 100%;
+          background-color: var(--color);
+          border-top: none;
+          list-style-type: none;
+          padding: 0;
+          margin: 0;
+          display: none;
+          z-index: 2;
+          color: #000;
+          border-radius: 10px;
+      }
+      
+      .suggestion-list li {
+          cursor: pointer;
+          padding: 10px;
+          border-radius: 10px;
+          border-bottom: 2px solid lightgray;
+      }
+      
+      .suggestion-list li:hover {
+          background-color: rgb(198, 187, 187);
+      }
 /*BUTTON*/
      .button{
           border: 0px solid var(--color);
@@ -46,6 +94,7 @@ body {
           margin-left: 1rem;
           border-radius: 20px;
           transition: all .5s;
+          position: relative;
      }
      .button:hover{
           background: silver;
@@ -62,7 +111,7 @@ body {
 
      ul.menu > li > a{
           display: block;
-          padding: 1rem;
+          padding: .5rem 2rem;
           text-decoration: none;
           color: var(--color);
           transition: all;
@@ -91,6 +140,7 @@ main{
 }
 /* LEFT */
      .left{
+          margin-bottom: 100%;
           width: 70px;
           height: 1000px;     
           padding: 10px;
@@ -101,6 +151,7 @@ main{
           transition: width .75s ease; 
           border-radius: 10px;
           margin-top: 2px;
+          position: relative;
      }
 
      .left:hover{
@@ -140,36 +191,115 @@ main{
      }
 /* CENTER */
      .center{
-          width:1000px; 
+          width:1100px; 
      }
 
      .art {
           background-color: var(--color);
           border-radius: 5px;
-          padding: 20px;
+          padding:30px;
           margin-bottom: 20px;
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);    
      }
-
-     .art h3 {
-          font-size: 20px;
-          margin-bottom: 10px;
-     }
-      
-     .art p {
-          color: #666;
-     }
-      
-     .art a {
-          color: #333;
-          text-decoration: none;
+/* Dồn qua phải */
+     .lef > div{
+          justify-content: flex-end;
+          display: flex;
      }
      
+     .lef{
+          margin-right: 20px;
+          position: relative;
+          width: 8%;
+     }
+
+     .righ{
+          position: relative;
+          width:92%;
+     }
+     .righ>h3{
+        margin: 0;
+     }
+     
+     ul.type {
+          list-style-type: none;
+          padding: 0;
+     }
+
+     ul.type>li>a{
+          text-decoration: none;
+          padding: 5px;
+          background-color: gray;
+          border-radius: 10px;
+          margin: 2px;
+          color: var(--color);
+     }
+     ul.type>li>a:hover{
+          color: lightblue;
+     }
+     .by{
+          margin-left: auto;
+          position: relative;
+     }
+     .by img{
+          width: 20px;
+          padding: 0 10px;
+          z-index: 1;
+     }
+     .by a{
+          text-decoration: none;
+          color: #000;
+     }
+     .by > .text:last-child{
+          text-align: end;
+     }
+     .info{
+          position: absolute;
+          visibility: hidden;
+          top: 65%;
+          left: 0;
+          background-color: black;
+          color: white;
+          padding: 10px;
+          width: 350px;
+          border-radius: 5px;
+          opacity: 0;
+          transition: opacity 1s ease-in-out;
+     }
+     .info::after{
+          content: "";
+          border-width: 10px;
+          border-style: solid;
+          border-color: transparent transparent black transparent;
+          bottom: 100%;
+          position: absolute;
+          left: 5rem;
+          overflow: auto;
+          z-index: 50;
+     }
+     .info>div.flex>:first-child{
+          width: 30%;
+     }
+     .info>div.flex :last-child{
+          width: 70%;
+     }     
+     .info img{
+          width: 100%;
+     }
+     .by .hide:hover + .info{
+          visibility: visible;
+          opacity: 1;
+          color: white;
+          z-index: 50    ;
+     }
+     .info:hover{
+          display: block;
+     }
      .con{
-          max-width: 960px;
-          max-width: 0 auto;
+          max-width: 1800px;
           padding-left: 5px;
      }
+  
 
 /* RIGHT */
      .right{
@@ -192,7 +322,7 @@ main{
           margin: .5rem;
      }
 
-     div > h2 {
+     h2 {
           font-size: 24px;
           margin-bottom: 20px;
           color: var(--color);
@@ -211,121 +341,204 @@ main{
      }
 
 /*LOGIN*/
-input[type=text], input[type=password] {
-     width: 100%;
-     padding: 12px 20px;
-     margin: 8px 0;
-     display: inline-block;
-     border: 1px solid #ccc;
-     box-sizing: border-box;
-     border-radius: 10px;
+.blocklogin{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     position: fixed;
+     z-index: 99;
+}
+
+.wrapper{
+     /* position: absolute; */
+     top: 20%;
+     left: 35%;
+     /* transform: translate(-50%, -50%); */
+     width: 400px;
+     height: 440px;
+     /* background: transparent; */
+     background: linear-gradient(white, silver);
+     border: 2px solid rgba(255, 255, 255, .5);
+     border-radius: 20px;
+     /* backdrop-filter: blur(20px); */ /*làm mờ nền*/
+     box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     overflow: hidden;
+     transform:  scale(0);
+     transition: transform .5s ease, height .2 ease;
    }
    
-  /* Đặt kiểu cho tất cả các nút */
-   button {
-     background-color: darkblue;
-     color: white;
-     padding: 14px 20px;
-     margin: 8px 0;
-     border: none;
-     cursor: pointer;
-     width: 100%;
-     border-radius: 10px;
+   .wrapper.active-popup{
+     transform:  scale(1);
+   
    }
    
-   button:hover {
-     opacity: 0.8;
+   .wrapper.active{
+     height: 520px;
    }
    
-/*bổ sung cho nút hủy */
-  .cancelbtn {
-     width: auto;
-     padding: 10px 18px;
-     background-color: #f44336;
+   .wrapper .form-box{
+     width: 80%;
+     padding: 40px;
    }
    
-  /* Căn giữa hình ảnh và định vị nút đóng */
-   .imgcontainer {
-     text-align: center;
-     margin: 24px 0 12px 0;
-     position: relative;
+   .wrapper .form-box.login{
+     transition: transfrom .18s ease;
+     transform: translateX(0);
    }
    
-   
-   .container {
-     padding: 16px;
+   .wrapper.active .form-box.login{
+     transition: none;
+     transform: translateX(-400px);
    }
    
-   span.psw {
-     float: right;
-     padding-top: 16px;
-   }
-   
-   /* nền đăng nhập */
-   .modal {
-     display: none; 
-     position: fixed; /*khóa hiện trên màn hình*/
-     z-index: 1; /*để login lên trên*/
-     left: 0;
-     top: 0;
-     width: 100%; 
-     height: 100%; 
-     overflow: auto; /* cho phép cuộn */
-     background-color: rgba(0,0,0,0.4); /* làm tối nền ngoài */
-     padding-top: 60px;
-   }
-   
-   /* Nội dung */
-   .modal-content {
-     border-radius: 10px;
-     background: silver;
-     margin: 5% auto 15% auto; /*vị trí*/
-     border: 1px solid #888;
-     width: 500px; 
-   }
-   
-   /* The Close Button (x) */
-   .close {
+   .wrapper .form-box.register{
      position: absolute;
-     right: 25px;
+     transition: none;
+     transform: translateX(400px);
+   }
+   
+   .wrapper.active .form-box.register{
+     transition: transfrom .18s ease;
+     transform: translateX(0);
+   }
+   
+   
+   .wrapper .icon-close{
+     position: absolute;
      top: 0;
-     color: #000;
-     font-size: 35px;
-     font-weight: bold;
+     right: 0;
+     width: 45px;
+     height: 45px;
+     background: #162938;
+     font-size: 1.5rem;
+     color: white;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     border-bottom-left-radius: 20px;
+     cursor: pointer; /*đổi con trỏ chuột*/
+     z-index: 1;
    }
    
-   .close:hover,
-   .close:focus {
-     color: red;
+   .form-box h2{
+     font-size: 2rem;
+     color: #162938;
+     text-align: center;
+   }
+   
+   .input-box{
+     position: relative;
+     width: 100%;
+     height: 50px;
+     border-bottom: 2px solid #162938;
+     margin: 30px 0;
+   }
+   
+   .input-box label{
+     position: absolute;
+     top: 50%;
+     left: 5px;
+     transform: translateY(-50%);
+     font-size: 1rem;
+     color: #162938;
+     font-weight: 500px;
+     pointer-events: none;
+     transition: .5s;
+   }
+   
+   .input-box input:focus~label,
+   .input-box input:valid~label{
+     top: -5px; 
+   }
+   
+   .input-box input{
+     width: 100%;
+     height: 100%;
+     background: transparent;
+     border: none;
+     outline: none;
+     font-size: 1rem;
+     color: #162938;
+     font-weight: 600;
+     padding: 0 35px 0 5px;
+   }
+   
+   .input-box .icon{
+     position: absolute;
+     right: 8px;
+     font-size: 1.2rem;
+     color: #162938;
+     line-height: 57px;
+   }
+   
+   .remember-forgot{
+     font-size: 1rem;
+     color: #162938;
+     font-weight: 500;
+     margin: -15px 0 15px;
+     display: flex;
+     justify-content: space-between;
+   }
+   
+   .remember-forgot label input{
+     accent-color: #162938;
+     margin-right: 3px;
+   }
+   
+   .remember-forgot a{
+     color: #162938;
+     text-decoration: none;
+   }
+   
+   .remember-forgot a:hover{
+     text-decoration: underline;
+   }
+   
+   .btn{
+     width: 100%;
+     height: 45px;
+     background: #162938;
+     border: none;
+     outline: none;
+     border-radius: 5px;
      cursor: pointer;
+     font-size: 1rem;
+     color: white;
+     font-weight: 500;
    }
    
-   /* Add Zoom Animation */
-   .animate {
-     -webkit-animation: animatezoom 0.6s;
-     animation: animatezoom 0.6s
+   .login-register{
+     font-size: .9rem;
+     color: #162938;
+     text-align: center;
+     font-weight: 500;
+     margin: 25px 0 10px;
    }
    
-   @-webkit-keyframes animatezoom {
-     from {-webkit-transform: scale(0)} 
-     to {-webkit-transform: scale(1)}
-   }
-     
-   @keyframes animatezoom {
-     from {transform: scale(0)} 
-     to {transform: scale(1)}
+   .login-register p a {
+     color: #162938;
+     text-decoration: none;
+     font-weight: 600;
    }
    
-   /* Change styles for span and cancel button on extra small screens */
-   /* @media screen and (max-width: 300px) {
-     span.psw {
-        display: block;
-        float: none;
-     }
-     .cancelbtn {
-        width: 100%;
-     }
-   } */
+   .login-register p a:hover{
+     text-decoration: underline;
+   }
 
 
-   
+   /*GO TO TOP*/
+#backtop{
+     width: 50px;
+     height: 50px;
+     background: tomato;
+     color: white;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     position: fixed;
+     bottom: 40px;
+     right: 20px;
+}

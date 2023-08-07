@@ -6,51 +6,28 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>Share Information Technology Knowledge</title>
      <link rel="stylesheet" href="styles.css">
-     <link rel="shortcut icon" href="Icon.png">
+     <link rel="shortcut icon" href="Images/Icon.png">
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
      <script src="script.js"></script>
-</head>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head> 
 <body>
      <header class="flex head">
         <div>
-               <img src="Untitled-1.png" class="img" alt="Information Technology">
+               <img src="Images/Untitled-1.png" class="img" alt="Information Technology">
         </div>
         <div>
             <h1>Information Technology Knowledge</h1>
         </div>
-        <div class="flex log">
-            <button onclick="document.getElementById('id01').style.display='block'" class="button" style="width:auto;">Login</button>
-            <div id="id01" class="modal">         
-            <form class="modal-content animate" action="/action_page.php" method="post">
-                <div class="imgcontainer">
-                    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-                </div>
-
-                <div class="container">
-                    <label for="uname"><b>Username</b></label>
-                    <input type="text" placeholder="Enter Username" name="uname" required>
-
-                    <label for="psw"><b>Password</b></label>
-                    <input type="password" placeholder="Enter Password" name="psw" required>
-                        
-                    <button type="submit">Login</button>
-                    <label>
-                        <input type="checkbox" checked="checked" name="remember"> Remember me
-                    </label>
-                </div>
-
-                <div class="container">
-                    <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-                    <span class="psw">Forgot <a href="#">password?</a></span>
-                </div>
-            </form>
+        <div class="flex">
+            <div class="search-box">
+                <input type="text" class="search-input" placeholder="Type your find">
+                <ul class="suggestion-list"></ul>
             </div>
-
-            <button onclick="document.getElementById('id02').style.display='block'" class="button" style="width:auto;">Sign in</button>
-
-
-
-
-
+                
+            <div class="flex log">
+                <button class="btnLogin-popup button">Login</button>
+            </div>
         </div>
      </header>
      <div class="flex cos">
@@ -60,6 +37,68 @@
                </ul>
           </nav>
      </div>
+
+     <div class="wrapper blocklogin">
+        <span class="icon-close"><i class="fa-solid fa-xmark"></i></span>
+        <div class="form-box login">
+            <h2>Login</h2>
+            <form action="#">
+                <div class="input-box">
+                <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+                <input type="email" required>
+                <label>Email</label>          
+                </div>
+                <div class="input-box">
+                <span class="icon"><i class="fa-solid fa-lock"></i></span>
+                <input type="password" required>
+                <label>Password</label>          
+                </div>
+                <div class="remember-forgot">
+                <label>
+                    <input type="checkbox">Remember me
+                </label>
+                <a href="#">Fogot Password?</a>
+                </div>
+                <button type="submit" class="btn">Login</button>
+                <div class="login-register">
+                <p>Don't have an account? 
+                <a href="#" class="register-link">Register</a></p>
+                </div>
+            </form>
+        </div>
+    
+        <div class="form-box register">
+            <h2>Registration</h2>
+            <form action="#">
+                <div class="input-box">
+                <span class="icon"><i class="fa-solid fa-user"></i></span>
+                <input type="text" required>
+                <label>Username</label>          
+                </div>
+                <div class="input-box">
+                <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+                <input type="email" required>
+                <label>Email</label>          
+                </div>
+                <div class="input-box">
+                <span class="icon"><i class="fa-solid fa-lock"></i></span>
+                <input type="password" required>
+                <label>Password</label>          
+                </div>
+                <div class="remember-forgot">
+                <label>
+                    <input type="checkbox">I agree to the terms & conditions
+                </label>
+                </div>
+                <button type="submit" class="btn">Register</button>
+                <div class="login-register">
+                <p>Already have an account? 
+                <a href="#" class="login-link">Login</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
      <main class="flex">
         <section class="left">
             <ul class="si">
@@ -114,28 +153,51 @@
                 </li>
            </ul>
         </section>
-        <section class="center">
-            <div class="con">
-                <h2>Posts</h2>
-                <div class="art">
-                    <h3>Title 1</h3>
-                    <p>Short description of the content of the article 1.</p>
-                    <a href="#">View more</a>
-                </div>
-                <div class="art">
-                    <h3>Title 2</h3>
-                    <p>Short description of the content of the article 2.</p>
-                    <a href="#">View more</a>
-                </div>
-                <div class="art">
-                    <h3>Title 3</h3>
-                    <p>Short description of the content of the article 2.</p>
-                    <a href="#">View more</a>
-                </div>
-                <div class="art">
-                    <h3>Title 4</h3>
-                    <p>Short description of the content of the article 2.</p>
-                    <a href="#">View more</a>
+        <section class="center" id="center">
+            <h2>Posts</h2>  
+            <div class="con" id="con">
+                <div class="art flex">
+                    <div class="lef">
+                        <div class="text">1 Votes</div>
+                        <div class="text">2 Answers</div>
+                        <div class="text">5 Views</div>
+                    </div>
+                    <div class="righ">
+                        <h3 id="title">How to write a function in C++</h3>
+                        <div class="flex">
+                            <div class="flex">
+                                <ul class="type flex">
+                                    <li><a href="#">C++</a></li>
+                                    <li><a href="#">C</a></li>
+                                </ul>
+                            </div>
+                            <div class="by">
+                                <div class="flex">
+                                    <h5 class="text">Posted by </h5>
+                                    <a href="#" class="flex hide">
+                                        <img src="Images/per1.jpg" alt="">
+                                        <h5 class="text">Martin Janíček</h5>
+                                    </a>
+                                    <div class="info">
+                                        <div class="flex">
+                                            <div><img src="Images/per1.jpg" alt=""></div>
+                                            <div>
+                                                <h5 class="text">Martin Janíček</h5>
+                                                <h5 class="text-min">Praha, Česko</h5>
+                                            </div>
+                                        </div>
+                                        <h5 class="text-min">Originally Java engineer developing parts of NetBeans IDE 
+                                            (Maven and Groovy support). Later on, my career moved me to 
+                                            pure front-end JS development (Grunt, Babel, KnockoutJS, Jasmine, 
+                                            SinonJS), mainly responsible for core functionality, API development a
+                                            nd co-leading technical aspects of the prod...
+                                        </h5>
+                                    </div>
+                                </div>
+                                <h5 class="text">2 mins ago</h5>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -144,11 +206,14 @@
                 <div>ADS</div>
            </div>       
         </section>
-     </main>
-     <footer>
+    </main>
+    <footer>
         <div class="container">
             <h4><p>&copy; Information Technology Knowledge</p</h4>
         </div>
-      </footer>
+        <div id="backtop">
+            <i class="fa-solid fa-arrow-up"></i>
+        </div>
+    </footer>
 </body>
 </html>

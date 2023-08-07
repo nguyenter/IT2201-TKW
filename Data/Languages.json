@@ -1,24 +1,15 @@
 [{
-    "id":1,
     "name":"Ruby"
 },
 {
-    "id":2,
     "name":"Python"
 },
 {
-    "id":3,
     "name":"C#"
 },
 {
-    "id":4,
     "name":"Java"
 },
 {
-    "id":5,
-    "name":"C#"
-},
-{
-    "id":6,
-    "name":"C#"
+    "name":"JavaScript"
 }]
