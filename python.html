@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Share Information Technology Knowledge</title>
     <link rel="stylesheet" href="CSS/styles.css">
-    <link rel="stylesheet" href="CSS/mobile.css" media="screen and (max-width: 500px)">
+    <link rel="stylesheet" href="CSS/mobile.css" media="screen and (max-width:400px)">
     <link rel="shortcut icon" href="Images/Icon.png">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-    <script src="JS/script.js"></script>
+    <script src="JS/python.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head> 
 <body>
@@ -22,7 +22,7 @@
                 <ul class="suggestion-list"></ul>
             </div>
             <div>
-                <button class="btnLogin-popup button" id="logIn" onclick="remove()"><i class="fa-solid fa-user"></i><div class="hid">Login/Register</div></button>    
+                <button class="btnLogin-popup button" id="logIn"  onclick="remove()"><i class="fa-solid fa-user"></i> Login/Register</button>    
             </div>
         </div>
     </header>
@@ -36,14 +36,14 @@
             <h2>Login</h2>
             <form action="#">
                 <div class="input-box">
-                    <span class="icon"><i class="fa-solid fa-envelope"></i></span>
-                    <input type="email" required>
-                    <label>Email</label>          
+                <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+                <input type="email" required>
+                <label>Email</label>          
                 </div>
                 <div class="input-box">
-                    <span class="icon show"><i class="fa-solid fa-eye"></i></span>
-                    <input type="password" required>
-                    <label>Password</label>          
+                <span class="icon show"><i class="fa-solid fa-eye"></i></span>
+                <input type="password" required>
+                <label>Password</label>          
                 </div>
                 <div class="remember-forgot">
                 <label>
@@ -94,7 +94,7 @@
     <div class="sidebar" id="sidebar">
         <ul>
             <li><a href="https://truong-thai-bao.github.io/Information-Technology-Knowledge/">Home</a></li>
-            <li><a href="#" id="new-post" onclick="add()">New Posts</a></li>
+            <li><a href="#" id="new-post"  onclick="add()">New Posts</a></li>
             <li><a href="#video" class="vid">Videos</a></li>
             <li><a href="mailto:2251050008bao@ou.edu.vn">Contact</a></li>
         </ul>
@@ -103,7 +103,7 @@
         <section class="left">
             <ul class="si">
                 <li>
-                    <div class="flex">
+                    <div class="flex ">
                         <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
                         <lord-icon
                             src="https://cdn.lordicon.com/gmzxduhd.json"
@@ -116,20 +116,19 @@
                     </div>
                 </li>
                 <li>
-                    <div class="flex">
+                    <div class="flex ">
                         <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
                         <lord-icon
-                            class="lord"    
                             src="https://cdn.lordicon.com/mecwbjnp.json"
                             trigger="morph"
                             colors="primary:#121331,secondary:#000000"
                             style="width:50px;height:50px">
                         </lord-icon>
-                        <a href="#" id="new-post" onclick="add()">New Posts</a>
+                        <a href="#" id="new-post"  onclick="add()">New Posts</a>
                     </div>
                 </li>
                 <li>
-                    <div class="flex">
+                    <div class="flex ">
                         <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
                         <lord-icon
                             src="https://cdn.lordicon.com/rzrkjbrm.json"
@@ -141,7 +140,7 @@
                     </div>
                 </li>
                 <li>
-                    <div class="flex">
+                    <div class="flex ">
                         <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
                         <lord-icon
                             src="https://cdn.lordicon.com/zpxybbhl.json"
@@ -155,14 +154,13 @@
            </ul>
         </section>
         <section class="center" id="center">
-            <h2>Posts</h2>  
+            <h2>Posts Python</h2>  
             <div class="con" id="con"></div>
         </section>
         <section class="right">
             <div class="ads" id="ads">
            </div>       
         </section>
-
     </main>
 
     <div class="videos">
@@ -188,7 +186,10 @@
                 <button class="next-button"><i class="fa-solid fa-angle-right"></i></button>
             </div>
         </div>
+        
+
     </div>
+
     <footer>
         <div>
             <a href="#"><img src="Images/facebook.png" alt="facebook"></a>
@@ -197,7 +198,7 @@
             <a href="#"><img src="Images/youtube.png" alt="youtube"></a>
         </div>
         <div>
-            <h4><p>&copy; Information Technology Knowledge</p></h4>
+            <h4><p>&copy; Information Technology Knowledge</p</h4>
         </div>
         <div id="backtop">
             <i class="fa-solid fa-arrow-up"></i>

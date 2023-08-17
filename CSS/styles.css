@@ -2,6 +2,13 @@
      --color:white;
 }
 
+h2 {
+     font-size: 24px;
+     margin-bottom: 20px;
+     color: var(--color);
+     text-align: center;
+}       
+
 .flex{
      display: flex;
 }
@@ -21,72 +28,67 @@ body {
 /*HEADER*/
      header{
           color: var(--color);
+          justify-content: space-between;
+          align-items: center;
      }
 
-     .img{
+     header>img{
           width: 120px;
      }
 
      header>div>h1{
           text-shadow: 3px 4px 3px rgb(133, 79, 184);
           position: relative;
-          left: 5rem;
      }
-
-     .log{
-          position: absolute;
-          right: 0;
+     .search-box{
+          margin-top:.5rem ;
      }
-     .head > div:last-child{
-         padding-top:1.5rem ;
+     .head>div{
+         margin-right: 2rem;
      }
 /* Thanh tìm kiếm */
      .search-box {
-          position: absolute;
-          /* display: flex; */
+          position: relative;
+          display: flex;
           align-items: center;
-          right: 11rem;
-          width: 500px;
-          font-family: cursive;
-      }
-      
+     }
+     
      .search-input {
           padding: 5px 10px;
           border: 1px solid #ccc;
           border-radius: 30px;
           outline: none;
-          font-family: cursive;
-      }
-      
+     }
+     
      .suggestion-list {
           position: absolute;
           top: calc(100% + 5px);
-          left: 0;
-          width: 100%;
+          left: -100px;
+          width: 400px;
           background-color: var(--color);
-          border-top: none;
+          color:#666;
+          border-radius: 7px;
           list-style-type: none;
           padding: 0;
-          margin: 0;
+          margin: 0;     
           display: none;
-          z-index: 2;
-          color: #000;
-          border-radius: 10px;
-      }
-      
-      .suggestion-list li {
+          z-index: 500;
+
+     }
+     
+     .suggestion-list li {
           cursor: pointer;
-          padding: 10px;
-          border-radius: 10px;
-          border-bottom: 2px solid lightgray;
-      }
-      
-      .suggestion-list li:hover {
-          background-color: rgb(198, 187, 187);
-      }
+          padding: 15px;
+          border-radius: 7px;
+          border: 1px dashed #ccc;
+     }
+     
+     .suggestion-list li:hover {
+          background-color: #ccc;
+     }
 /*BUTTON*/
      .button{
-          border: 0px solid var(--color);
+          border: 1px solid var(--color);
           background: none;
           color: var(--color);
           display: block;
@@ -94,11 +96,12 @@ body {
           margin-left: 1rem;
           border-radius: 20px;
           transition: all .5s;
-          position: relative;
+
      }
      .button:hover{
           background: silver;
           color: black;
+          cursor: pointer;
      }
 /* NAV */
      ul.menu{
@@ -122,27 +125,29 @@ body {
      ul.menu > li > a:hover{
           background: silver;
           color: black;
-          border-radius: 20px;
+          border-radius: 10px;
           border-bottom: 2px black;
      }
 
-     .cos{
+     nav{
           background-color: #666;
           top:0;
           border-radius: 10px;
           width: 100%;
+          position: sticky;
+          z-index: 100;
      }
 
 /*MAIN*/
-main{
-     flex-wrap: nowrap;
-     position: relative;
-}
+     main{
+          flex-wrap: nowrap;
+          position: relative;
+     }
 /* LEFT */
-     .left{
-          margin-bottom: 100%;
+     .left{    
+          top:0;
           width: 70px;
-          height: 1000px;     
+          height: 100vh  ;     
           padding: 10px;
           background-color: #666;
           box-sizing: border-box;
@@ -151,7 +156,7 @@ main{
           transition: width .75s ease; 
           border-radius: 10px;
           margin-top: 2px;
-          position: relative;
+          position: sticky;
      }
 
      .left:hover{
@@ -210,7 +215,7 @@ main{
      .lef{
           margin-right: 20px;
           position: relative;
-          width: 8%;
+          width: 10%;
      }
 
      .righ{
@@ -255,7 +260,7 @@ main{
      }
      .info{
           position: absolute;
-          visibility: hidden;
+          visibility: hidden; 
           top: 65%;
           left: 0;
           background-color: black;
@@ -266,6 +271,7 @@ main{
           opacity: 0;
           transition: opacity 1s ease-in-out;
      }
+    
      .info::after{
           content: "";
           border-width: 10px;
@@ -277,67 +283,151 @@ main{
           overflow: auto;
           z-index: 50;
      }
+
      .info>div.flex>:first-child{
           width: 30%;
      }
+
      .info>div.flex :last-child{
           width: 70%;
-     }     
+     }   
+     .info> :last-child{
+          border-top: 2px solid white;
+          padding-top: 1rem;
+     }  
      .info img{
           width: 100%;
-     }
+     }    
      .by .hide:hover + .info{
           visibility: visible;
           opacity: 1;
           color: white;
           z-index: 50    ;
-     }
+     }    
      .info:hover{
+          display: block;
+     }
+
+     /* info khi tràn ra màn hình */
+     .infoUp{
+          position: absolute;
+          visibility: hidden;
+          bottom: 120%;
+          left: 0;
+          background-color: black;
+          color: white;
+          padding: 10px;
+          width: 350px;
+          border-radius: 5px;
+          opacity: 0; 
+          transition: opacity 1s ease-in-out;
+     }
+     
+     .infoUp::after{
+          content: "";
+          border-width: 10px;
+          border-style: solid;
+          border-color: black  transparent transparent transparent;
+          top: 100%;
+          position: absolute;
+          left: 5rem;
+          overflow: auto;
+          z-index: 500;
+     }
+
+     .infoUp>div.flex>:first-child{
+          width: 30%;
+     }
+
+     .infoUp>div.flex :last-child{
+          width: 70%;
+     }   
+     .infoUp> :last-child{
+          border-top: 2px solid white;
+          padding-top: 1rem;
+     }  
+     .infoUp img{
+          width: 100%;
+     }    
+     .by .hide:hover + .infoUp{
+          visibility: visible;
+          opacity: 1;
+          color: white;
+          z-index: 500;
+     }    
+     .infoUp:hover{
           display: block;
      }
      .con{
           max-width: 1800px;
           padding-left: 5px;
-     }
-  
-
-/* RIGHT */
-     .right{
-          position: absolute;
-          top: .25rem;
-          right: 0;
-          height: 1000px;
-     }    
-     .abs{
-          position: relative;
-     }
-     
-     .ads > div{
-          border: 3px dashed blanchedalmond;
-          padding:4rem;
-          color: var(--color);
      }  
 
-     .right h3{
-          margin: .5rem;
-     }
-
-     h2 {
-          font-size: 24px;
-          margin-bottom: 20px;
-          color: var(--color);
-          text-align: center;
-     }
-
+/* RIGHT */
+     .right {
+     float: right;
+     margin-top: 1rem;
+     width: 200px;
+     height: 500px;
+     position: absolute;
+     right: 0;
+   }
+   
+   .ads {
+     display: flex;
+     flex-direction: column; /* Xếp các hình ảnh dọc */
+     position: absolute;
+     right: 0px;
+   }
+   
+   .ads > div {
+     padding: 0;
+     color: var(--color);
+     justify-content: center;
+     align-items: center;
+     height: 80%; /* Chiếm 50% chiều cao của .ads để tạo 2 hình bên cạnh */
+   }
+   
+   .ads > div img {
+     max-width: 100%; /* Thu nhỏ hình ảnh lại để vừa với khung */
+     max-height: 100%; 
+   }
+        
 /* FOOTER */
      footer {
           color: var(--color);
-          text-align: center;
+          background-color: #1b1919f3;
+          position: relative;
+          height: 130px;
      }
-     .container {
-          max-width: 600px;
-          margin: 0 auto;
-          padding: 0px;
+     footer div:first-child{
+          position: absolute;
+          top:1rem; 
+          left: 41%;
+     }
+     footer img{
+          width: 45px;
+          margin: 8px;   
+          position: relative;
+     }
+     footer > div > a:nth-child(1) > img{
+         filter: drop-shadow(2px 2px 10px #1178f2);
+     }   
+      
+     footer > div > a:nth-child(2) > img{
+          filter: drop-shadow(2px 2px 10px brown);
+     }    
+
+     footer > div > a:nth-child(3) > img{
+           filter: drop-shadow(2px 2px 10px #179cf0);
+     }    
+     footer > div > a:nth-child(4) > img{
+           filter: drop-shadow(2px 2px 10px #f70000);
+     }    
+     footer p{
+          position: absolute; 
+          bottom: .5rem;
+          left:40%;
      }
 
 /*LOGIN*/
@@ -346,21 +436,17 @@ main{
      justify-content: center;
      align-items: center;
      position: fixed;
-     z-index: 99;
+     z-index: 101;
 }
 
 .wrapper{
-     /* position: absolute; */
      top: 20%;
      left: 35%;
-     /* transform: translate(-50%, -50%); */
      width: 400px;
      height: 440px;
-     /* background: transparent; */
      background: linear-gradient(white, silver);
      border: 2px solid rgba(255, 255, 255, .5);
      border-radius: 20px;
-     /* backdrop-filter: blur(20px); */ /*làm mờ nền*/
      box-shadow: 0 0 30px rgba(0, 0, 0, .5);
      display: flex;
      justify-content: center;
@@ -372,7 +458,6 @@ main{
    
    .wrapper.active-popup{
      transform:  scale(1);
-   
    }
    
    .wrapper.active{
@@ -473,7 +558,11 @@ main{
      color: #162938;
      line-height: 57px;
    }
-   
+
+   .show{
+     cursor: pointer;
+   }
+
    .remember-forgot{
      font-size: 1rem;
      color: #162938;
@@ -526,8 +615,8 @@ main{
    
    .login-register p a:hover{
      text-decoration: underline;
+     cursor: pointer;
    }
-
 
    /*GO TO TOP*/
 #backtop{
@@ -541,4 +630,63 @@ main{
      position: fixed;
      bottom: 40px;
      right: 20px;
+     border-radius: 50%;
+}
+
+#backtop:hover{
+     cursor: pointer;
+}
+
+/*VIDEO*/
+
+.video-container {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+
+}
+
+.videos iframe {
+     width: calc(25% - 10px);
+     height: 300%;
+     margin: 0 10px;
+     box-sizing: border-box;
+     z-index: 1;
+}
+
+.go{
+     display: flex;
+     justify-content: space-between;
+}
+
+.go >button{
+     font-size: 20px;
+     border-radius: 10px;
+     background: none;
+     transition: 1s;
+     z-index: 1111;
+}
+
+.go >button:hover{
+     cursor: pointer;
+}
+/* NEW POST */
+@keyframes logIn {
+     from{
+          background: none;
+          color: var(--color);
+     }
+     to{
+          background: var(--color);
+          color: black;
+     }
+}
+.err{
+     animation: logIn .75s infinite;
+}
+.MENU{
+     display: none;
+}
+.sidebar{
+     display: none;
 }
